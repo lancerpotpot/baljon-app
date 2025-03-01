@@ -1,26 +1,18 @@
 #!/usr/bin/env php
 <?php
 
-<<<<<<< HEAD
-=======
 use Illuminate\Foundation\Application;
->>>>>>> 7c3453f (Exercise #2 - Architectual Concepts)
 use Symfony\Component\Console\Input\ArgvInput;
 
 define('LARAVEL_START', microtime(true));
 
 // Register the Composer autoloader...
-require __DIR__.'/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // Bootstrap Laravel and handle the command...
-<<<<<<< HEAD
-$status = (require_once __DIR__.'/bootstrap/app.php')
-    ->handleCommand(new ArgvInput);
-=======
 /** @var Application $app */
-$app = require_once __DIR__.'/bootstrap/app.php';
+$app = require_once __DIR__ . '/bootstrap/app.php';
 
-$status = $app->handleCommand(new ArgvInput);
->>>>>>> 7c3453f (Exercise #2 - Architectual Concepts)
+$status = $app->handleCommand(new ArgvInput());
 
 exit($status);
