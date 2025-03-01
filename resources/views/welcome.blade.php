@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-        Sample text
+        <h1>Welcome! I am John Lance Baljon</h1>
+        <p>Konnichiwa yo people!</p>
     </body>
 </html>
