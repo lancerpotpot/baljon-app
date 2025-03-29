@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
 use App\Services\UserService;
 use App\Http\Controllers\UserController;
+use App\Services\ProductService;
+use App\Http\Controllers\ProductController;
+use App\Services\TaskService;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +31,8 @@ Route::get('/test-facade', function (UserService $userService) {
     return Response::json($userService->listUsers());
 });
 
+
+// ---------------------
 #exer3
 
 Route::get('/post/{post}/comment/{comments}', function (string $postId, string $comments) {
@@ -80,3 +85,17 @@ Route::post('/token', function(Request $request) {
     // $token = $request=>session()->token();
     return $request->all();
 });
+
+
+
+// ---------------------
+#exer4
+
+Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
+ 
+ Route::resource('product', ProductController::class);
+ 
+ Route::get('/product-list', function (ProductService $productService) {
+     $data['products'] = $productService->listProducts();
+     return view('products.list', $data);
+ });
