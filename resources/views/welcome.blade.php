@@ -1,3 +1,10 @@
+<x-layout>
+    <x-slot:heading>
+        <h1>Welcome to {{ $name }}</h1>
+    </x-slot:heading>
+</x-layout>
+
+<!--
 <!DOCTYPE html>
 <html>
     <body>
@@ -6,3 +13,4 @@
         <button href="https://github.com/lancerpotpot">Visit Github</button>
     </body>
 </html>
+-->
